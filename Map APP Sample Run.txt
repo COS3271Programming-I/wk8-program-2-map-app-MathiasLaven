@@ -1,0 +1,7 @@
+Enter your username: 
+>>Jerry_Miller
+Welcome Jerry_Miller! Please provide your account password: 
+>>101011
+
+Account unlocked! Here is your stored message:
+"Hi! Do you think you can catch the game next weekend? Let me know and I'll come by. -Paul"

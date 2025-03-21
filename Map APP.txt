@@ -1,0 +1,49 @@
+package my_project;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class MyClass {
+    static Scanner userinput = new Scanner(System.in);
+    public static void main(String[] args) {
+    	
+    	Map<String,String> passwords = new HashMap<>();
+    	passwords.put("johnSmith", "P@ssw0rd");
+    	passwords.put("AzureDiamond", "hunter2");
+    	passwords.put("Jerry_Miller", "101011");
+    	passwords.put("randall936", "correcthorsebatterystaple");
+    	passwords.put("SITEOWNER", "admin");
+    	
+    	Map<String,String> messages = new HashMap<>();
+    	messages.put("johnSmith", "Hello John, I'll be home by 8 PM. Don't forget to take out the trash.");
+    	messages.put("AzureDiamond", "hey its Cthon98. how you been doing?");
+    	messages.put("Jerry_Miller", "Hi! Do you think you can catch the game next weekend? Let me know and I'll come by. -Paul");
+    	messages.put("randall936", "How long did it take you to guess this?");
+    	messages.put("SITEOWNER", "[NOTICE] 73 users have been reported in the last 2 weeks. Check the Reports menu for more information.");
+    	
+    	
+    	System.out.print("Enter your username: \n>>");
+    	String username = userinput.nextLine();
+    	
+		String correctPassword = passwords.get(username);
+		
+    	if (correctPassword != null) {
+        	System.out.format("Welcome %s! Please provide your account password: \n>>", username);
+        	String enteredPassword = userinput.nextLine();
+        	
+        	if (enteredPassword.equals(correctPassword)) {
+        		
+            	System.out.println("");
+            	System.out.println("Account unlocked! Here is your stored message:");
+            	System.out.format("\"%s\"", messages.get(username));
+            	
+        	} else {
+            	System.out.println("Your password was incorrect.");
+        	}
+        	
+    	} else {
+        	System.out.println("Sorry, no account exists with that username.");
+    	}
+		
+	}
+}
